@@ -105,45 +105,40 @@
 }
 
 #pragma mark - setup animations
-- (void)circleViewGrowAnimation {
-    [UIView animateWithDuration:1 delay:0 options:UIViewAnimationOptionCurveLinear animations:^{
-        [self.figureView.arrangedSubviews[0] setTransform:CGAffineTransformScale(self.figureView.arrangedSubviews[0].transform, 1.1, 1.1)];
-    }completion:^(BOOL finished){
-        if (finished) {
-            [self circleViewFromBigToSmallAnimation];
-        }
-    }];
-}
-
-- (void)circleViewFromBigToSmallAnimation {
-    [UIView animateWithDuration:1 delay:0 options:UIViewAnimationOptionCurveLinear animations:^{
-        [self.figureView.arrangedSubviews[0] setTransform:CGAffineTransformScale(self.figureView.arrangedSubviews[0].transform, 63/77, 63/77)];
-    }completion:^(BOOL finished){
-        if (finished) {
-            [self circleViewFromSmallToBigAnimation];
-        }
-    }];
-}
-
-- (void)circleViewFromSmallToBigAnimation {
-    [UIView animateWithDuration:1 delay:0 options:UIViewAnimationOptionCurveLinear animations:^{
-        [self.figureView.arrangedSubviews[0] setTransform:CGAffineTransformScale(self.figureView.arrangedSubviews[0].transform, 77/63, 77/63)];
-    }completion:^(BOOL finished){
-        if (finished) {
-            [self circleViewFromBigToSmallAnimation];
-        }
-    }];
+- (void)circleViewAnimation {
+    [UIView animateKeyframesWithDuration:1
+                                   delay:0
+                                 options:UIViewKeyframeAnimationOptionRepeat
+                              animations:^{
+        [UIView addKeyframeWithRelativeStartTime:0 relativeDuration:0.25 animations:^{
+            [self.figureView.arrangedSubviews[0] setTransform:CGAffineTransformScale(self.figureView.arrangedSubviews[0].transform, (CGFloat)77/70, (CGFloat)77/70)];
+        }];
+        [UIView addKeyframeWithRelativeStartTime:0.25 relativeDuration:0.5 animations:^{
+            [self.figureView.arrangedSubviews[0] setTransform:CGAffineTransformScale(self.figureView.arrangedSubviews[0].transform, (CGFloat)63/77, (CGFloat)63/77)];
+        }];
+        [UIView addKeyframeWithRelativeStartTime:0.75 relativeDuration:0.25 animations:^{
+            [self.figureView.arrangedSubviews[0] setTransform:CGAffineTransformScale(self.figureView.arrangedSubviews[0].transform, (CGFloat)70/63, (CGFloat)70/63)];
+        }];
+    }
+                              completion:nil];
 }
 
 - (void)squareViewAnimation {
-    [UIView animateWithDuration:1 delay:0 options:UIViewAnimationOptionCurveLinear animations:^{
-//        [self.figureView.arrangedSubviews[1] setTransform:CGAffineTransformTranslate(self.figureView.arrangedSubviews[1].transform, 0, 7)];
-//        [self.figureView.arrangedSubviews[1] setTransform:CGAffineTransformTranslate(self.figureView.arrangedSubviews[1].transform, 0, -7)];
-    }completion:^(BOOL finished){
-        if (finished) {
-            [self squareViewAnimation];
-        }
-    }];
+    [UIView animateKeyframesWithDuration:1
+                                   delay:0
+                                 options:UIViewKeyframeAnimationOptionRepeat
+                              animations:^{
+        [UIView addKeyframeWithRelativeStartTime:0 relativeDuration:0.25 animations:^{
+            [self.figureView.arrangedSubviews[1] setTransform:CGAffineTransformTranslate(self.figureView.arrangedSubviews[1].transform, 0, 7)];
+        }];
+        [UIView addKeyframeWithRelativeStartTime:0.25 relativeDuration:0.5 animations:^{
+            [self.figureView.arrangedSubviews[1] setTransform:CGAffineTransformTranslate(self.figureView.arrangedSubviews[1].transform, 0, -14)];
+        }];
+        [UIView addKeyframeWithRelativeStartTime:0.75 relativeDuration:0.25 animations:^{
+            [self.figureView.arrangedSubviews[1] setTransform:CGAffineTransformTranslate(self.figureView.arrangedSubviews[1].transform, 0, 7)];
+        }];
+    }
+                              completion:nil];
 }
 
 - (void)triangleViewAnimation
@@ -158,7 +153,7 @@
 }
 
 - (void) setupAnimations {
-    [self circleViewGrowAnimation];
+    [self circleViewAnimation];
     [self squareViewAnimation];
     [self triangleViewAnimation];
 }
