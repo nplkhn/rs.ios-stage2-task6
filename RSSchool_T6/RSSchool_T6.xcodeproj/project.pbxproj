@@ -13,6 +13,8 @@
 		0365F472249BFEDD004307C8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0365F470249BFEDD004307C8 /* LaunchScreen.storyboard */; };
 		0365F475249BFEDD004307C8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0365F474249BFEDD004307C8 /* main.m */; };
 		0365F47F249C014D004307C8 /* iconNames.m in Sources */ = {isa = PBXBuildFile; fileRef = 0365F47E249C014D004307C8 /* iconNames.m */; };
+		0365F482249C08AD004307C8 /* Screen1ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0365F481249C08AD004307C8 /* Screen1ViewController.m */; };
+		0365F486249C212B004307C8 /* UIColor+ColorWithRGBValue.m in Sources */ = {isa = PBXBuildFile; fileRef = 0365F485249C212B004307C8 /* UIColor+ColorWithRGBValue.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +29,10 @@
 		0365F474249BFEDD004307C8 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		0365F47D249C0136004307C8 /* iconNames.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = iconNames.h; sourceTree = "<group>"; };
 		0365F47E249C014D004307C8 /* iconNames.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = iconNames.m; sourceTree = "<group>"; };
+		0365F480249C08AD004307C8 /* Screen1ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Screen1ViewController.h; sourceTree = "<group>"; };
+		0365F481249C08AD004307C8 /* Screen1ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Screen1ViewController.m; sourceTree = "<group>"; };
+		0365F484249C212B004307C8 /* UIColor+ColorWithRGBValue.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIColor+ColorWithRGBValue.h"; sourceTree = "<group>"; };
+		0365F485249C212B004307C8 /* UIColor+ColorWithRGBValue.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIColor+ColorWithRGBValue.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,11 +65,14 @@
 		0365F461249BFED8004307C8 /* RSSchool_T6 */ = {
 			isa = PBXGroup;
 			children = (
+				0365F483249C20F3004307C8 /* Categories */,
 				0365F47C249C0108004307C8 /* Constraints */,
 				0365F47B249C00A9004307C8 /* Support */,
 				0365F468249BFED8004307C8 /* ViewController.h */,
 				0365F469249BFED8004307C8 /* ViewController.m */,
 				0365F473249BFEDD004307C8 /* Info.plist */,
+				0365F480249C08AD004307C8 /* Screen1ViewController.h */,
+				0365F481249C08AD004307C8 /* Screen1ViewController.m */,
 			);
 			path = RSSchool_T6;
 			sourceTree = "<group>";
@@ -87,6 +96,15 @@
 				0365F47E249C014D004307C8 /* iconNames.m */,
 			);
 			path = Constraints;
+			sourceTree = "<group>";
+		};
+		0365F483249C20F3004307C8 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				0365F484249C212B004307C8 /* UIColor+ColorWithRGBValue.h */,
+				0365F485249C212B004307C8 /* UIColor+ColorWithRGBValue.m */,
+			);
+			path = Categories;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -159,7 +177,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				0365F46A249BFED8004307C8 /* ViewController.m in Sources */,
+				0365F486249C212B004307C8 /* UIColor+ColorWithRGBValue.m in Sources */,
 				0365F464249BFED8004307C8 /* AppDelegate.m in Sources */,
+				0365F482249C08AD004307C8 /* Screen1ViewController.m in Sources */,
 				0365F475249BFEDD004307C8 /* main.m in Sources */,
 				0365F47F249C014D004307C8 /* iconNames.m in Sources */,
 			);
