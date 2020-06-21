@@ -7,7 +7,8 @@
 //
 
 #import "AppDelegate.h"
-#import "Screen1ViewController.h"
+#import "StartScreenViewController.h"
+#import "CustomNavigationViewController.h"
 
 @interface AppDelegate ()
 
@@ -19,13 +20,18 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     self.window = [[UIWindow alloc] initWithFrame:UIScreen.mainScreen.bounds];
-    Screen1ViewController *viewController = [Screen1ViewController new];
     
-    [self.window setRootViewController:viewController];
+    self.window.rootViewController = [self rootViewController];
     
     [self.window makeKeyAndVisible];
     
     return YES;
+}
+
+- (UIViewController *)rootViewController {
+    UINavigationController *firstViewController = [[UINavigationController alloc] initWithRootViewController:[StartScreenViewController new]];
+    
+    return firstViewController;
 }
 
 

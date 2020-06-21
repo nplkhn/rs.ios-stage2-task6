@@ -6,28 +6,39 @@
 //  Copyright © 2020 Никита Плахин. All rights reserved.
 //
 
-#import "Screen1ViewController.h"
+#import "StartScreenViewController.h"
+#import "CustomNavigationViewController.h"
+#import "CustomTabBarController.h"
 #import "UIColor+ColorWithRGBValue.h"
 
-@interface Screen1ViewController ()
+
+@interface StartScreenViewController ()
 
 @property (nonatomic, strong) UILabel *topLabel;
 @property (nonatomic, strong) UIStackView *figureView;
 @property (nonatomic, strong) UIButton *startButton;
+@property (nonatomic, strong) CustomTabBarController *tabBarController;
 
 @end
 
-@implementation Screen1ViewController
+@implementation StartScreenViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.view.backgroundColor = UIColor.whiteColor;
     [self setupViews];
     [self setupAnimations];
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    [self.navigationController setNavigationBarHidden:YES];
+}
+
 #pragma mark - setup views
 - (void)setupViews {
+    self.view.backgroundColor = UIColor.whiteColor;
+    
+    // MARK: top label
     self.topLabel = [UILabel new];
     self.topLabel.text = @"Are you ready?";
     self.topLabel.font = [UIFont fontWithName:@"HelveticaNeue-Medium" size:24];
@@ -39,6 +50,7 @@
         [self.topLabel.centerXAnchor constraintEqualToAnchor:self.view.centerXAnchor],
     ]];
     
+    // MARK: figure views
     UIView *circleView = [[UIView alloc] init];
     UIView *squareView = [[UIView alloc] init];
     UIView *triangleView = [[UIView alloc] init];
@@ -85,6 +97,7 @@
     
     triangleView.layer.mask = triangleMaskLayer;
     
+    // MARK: start button
     self.startButton = [UIButton new];
     [self.startButton setTitle:@"START" forState:UIControlStateNormal];
     [self.startButton setTitleColor:[UIColor colorFromRGBNumber:@0x101010] forState:UIControlStateNormal];
@@ -102,6 +115,10 @@
         [self.startButton.heightAnchor constraintEqualToConstant:55.0],
         [self.startButton.widthAnchor constraintEqualToAnchor:self.view.widthAnchor constant:-100]
     ]];
+    
+    [self.startButton addTarget:self action:@selector(buttonTapped) forControlEvents:UIControlEventTouchUpInside];
+    
+    self.tabBarController = [CustomTabBarController new];
 }
 
 #pragma mark - setup animations
@@ -141,8 +158,7 @@
                               completion:nil];
 }
 
-- (void)triangleViewAnimation
-{
+- (void)triangleViewAnimation {
     [UIView animateWithDuration:1.5 delay:0 options:UIViewAnimationOptionCurveLinear animations:^{
         [self.figureView.arrangedSubviews[2] setTransform:CGAffineTransformRotate(self.figureView.arrangedSubviews[2].transform, M_PI_2)];
     }completion:^(BOOL finished){
@@ -156,6 +172,11 @@
     [self circleViewAnimation];
     [self squareViewAnimation];
     [self triangleViewAnimation];
+}
+
+#pragma mark - button tap handler
+- (void) buttonTapped {
+    [self.navigationController pushViewController:self.tabBarController animated:YES];
 }
 
 /*

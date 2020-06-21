@@ -8,31 +8,43 @@
 
 /* Begin PBXBuildFile section */
 		0365F464249BFED8004307C8 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0365F463249BFED8004307C8 /* AppDelegate.m */; };
-		0365F46A249BFED8004307C8 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0365F469249BFED8004307C8 /* ViewController.m */; };
 		0365F46F249BFEDD004307C8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0365F46E249BFEDD004307C8 /* Assets.xcassets */; };
 		0365F472249BFEDD004307C8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0365F470249BFEDD004307C8 /* LaunchScreen.storyboard */; };
 		0365F475249BFEDD004307C8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0365F474249BFEDD004307C8 /* main.m */; };
 		0365F47F249C014D004307C8 /* iconNames.m in Sources */ = {isa = PBXBuildFile; fileRef = 0365F47E249C014D004307C8 /* iconNames.m */; };
-		0365F482249C08AD004307C8 /* Screen1ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0365F481249C08AD004307C8 /* Screen1ViewController.m */; };
+		0365F482249C08AD004307C8 /* StartScreenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0365F481249C08AD004307C8 /* StartScreenViewController.m */; };
 		0365F486249C212B004307C8 /* UIColor+ColorWithRGBValue.m in Sources */ = {isa = PBXBuildFile; fileRef = 0365F485249C212B004307C8 /* UIColor+ColorWithRGBValue.m */; };
+		0365F489249CB745004307C8 /* CustomTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0365F488249CB745004307C8 /* CustomTabBarController.m */; };
+		0365F490249D7B93004307C8 /* InfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0365F48F249D7B93004307C8 /* InfoViewController.m */; };
+		0365F493249D7BA1004307C8 /* GalleryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0365F492249D7BA1004307C8 /* GalleryViewController.m */; };
+		0365F496249D7BB0004307C8 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0365F495249D7BB0004307C8 /* HomeViewController.m */; };
+		0365F499249D889A004307C8 /* CustomNavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0365F498249D889A004307C8 /* CustomNavigationViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		0365F45F249BFED8004307C8 /* RSSchool_T6.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RSSchool_T6.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0365F462249BFED8004307C8 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		0365F463249BFED8004307C8 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		0365F468249BFED8004307C8 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		0365F469249BFED8004307C8 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		0365F46E249BFEDD004307C8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0365F471249BFEDD004307C8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0365F473249BFEDD004307C8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0365F474249BFEDD004307C8 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		0365F47D249C0136004307C8 /* iconNames.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = iconNames.h; sourceTree = "<group>"; };
 		0365F47E249C014D004307C8 /* iconNames.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = iconNames.m; sourceTree = "<group>"; };
-		0365F480249C08AD004307C8 /* Screen1ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Screen1ViewController.h; sourceTree = "<group>"; };
-		0365F481249C08AD004307C8 /* Screen1ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Screen1ViewController.m; sourceTree = "<group>"; };
+		0365F480249C08AD004307C8 /* StartScreenViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StartScreenViewController.h; sourceTree = "<group>"; };
+		0365F481249C08AD004307C8 /* StartScreenViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = StartScreenViewController.m; sourceTree = "<group>"; };
 		0365F484249C212B004307C8 /* UIColor+ColorWithRGBValue.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIColor+ColorWithRGBValue.h"; sourceTree = "<group>"; };
 		0365F485249C212B004307C8 /* UIColor+ColorWithRGBValue.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIColor+ColorWithRGBValue.m"; sourceTree = "<group>"; };
+		0365F487249CB745004307C8 /* CustomTabBarController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CustomTabBarController.h; sourceTree = "<group>"; };
+		0365F488249CB745004307C8 /* CustomTabBarController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CustomTabBarController.m; sourceTree = "<group>"; };
+		0365F48E249D7B93004307C8 /* InfoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InfoViewController.h; sourceTree = "<group>"; };
+		0365F48F249D7B93004307C8 /* InfoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InfoViewController.m; sourceTree = "<group>"; };
+		0365F491249D7BA1004307C8 /* GalleryViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GalleryViewController.h; sourceTree = "<group>"; };
+		0365F492249D7BA1004307C8 /* GalleryViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GalleryViewController.m; sourceTree = "<group>"; };
+		0365F494249D7BB0004307C8 /* HomeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
+		0365F495249D7BB0004307C8 /* HomeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
+		0365F497249D889A004307C8 /* CustomNavigationViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CustomNavigationViewController.h; sourceTree = "<group>"; };
+		0365F498249D889A004307C8 /* CustomNavigationViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CustomNavigationViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,14 +77,11 @@
 		0365F461249BFED8004307C8 /* RSSchool_T6 */ = {
 			isa = PBXGroup;
 			children = (
+				0365F48D249D7B07004307C8 /* ViewControllers */,
 				0365F483249C20F3004307C8 /* Categories */,
 				0365F47C249C0108004307C8 /* Constraints */,
 				0365F47B249C00A9004307C8 /* Support */,
-				0365F468249BFED8004307C8 /* ViewController.h */,
-				0365F469249BFED8004307C8 /* ViewController.m */,
 				0365F473249BFEDD004307C8 /* Info.plist */,
-				0365F480249C08AD004307C8 /* Screen1ViewController.h */,
-				0365F481249C08AD004307C8 /* Screen1ViewController.m */,
 			);
 			path = RSSchool_T6;
 			sourceTree = "<group>";
@@ -105,6 +114,25 @@
 				0365F485249C212B004307C8 /* UIColor+ColorWithRGBValue.m */,
 			);
 			path = Categories;
+			sourceTree = "<group>";
+		};
+		0365F48D249D7B07004307C8 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				0365F480249C08AD004307C8 /* StartScreenViewController.h */,
+				0365F481249C08AD004307C8 /* StartScreenViewController.m */,
+				0365F487249CB745004307C8 /* CustomTabBarController.h */,
+				0365F488249CB745004307C8 /* CustomTabBarController.m */,
+				0365F48E249D7B93004307C8 /* InfoViewController.h */,
+				0365F48F249D7B93004307C8 /* InfoViewController.m */,
+				0365F491249D7BA1004307C8 /* GalleryViewController.h */,
+				0365F492249D7BA1004307C8 /* GalleryViewController.m */,
+				0365F494249D7BB0004307C8 /* HomeViewController.h */,
+				0365F495249D7BB0004307C8 /* HomeViewController.m */,
+				0365F497249D889A004307C8 /* CustomNavigationViewController.h */,
+				0365F498249D889A004307C8 /* CustomNavigationViewController.m */,
+			);
+			path = ViewControllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -176,11 +204,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0365F46A249BFED8004307C8 /* ViewController.m in Sources */,
+				0365F499249D889A004307C8 /* CustomNavigationViewController.m in Sources */,
+				0365F489249CB745004307C8 /* CustomTabBarController.m in Sources */,
+				0365F493249D7BA1004307C8 /* GalleryViewController.m in Sources */,
 				0365F486249C212B004307C8 /* UIColor+ColorWithRGBValue.m in Sources */,
 				0365F464249BFED8004307C8 /* AppDelegate.m in Sources */,
-				0365F482249C08AD004307C8 /* Screen1ViewController.m in Sources */,
+				0365F482249C08AD004307C8 /* StartScreenViewController.m in Sources */,
+				0365F496249D7BB0004307C8 /* HomeViewController.m in Sources */,
 				0365F475249BFEDD004307C8 /* main.m in Sources */,
+				0365F490249D7B93004307C8 /* InfoViewController.m in Sources */,
 				0365F47F249C014D004307C8 /* iconNames.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
