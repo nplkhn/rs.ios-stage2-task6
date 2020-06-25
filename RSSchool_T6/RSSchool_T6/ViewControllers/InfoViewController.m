@@ -7,6 +7,8 @@
 //
 
 #import "InfoViewController.h"
+#import "ImageTableViewCell.h"
+#import "iconNames.h"
 
 @interface InfoViewController ()
 
@@ -16,19 +18,30 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self viewWillAppear:YES];
     [self setupViews];
-    // Do any additional setup after loading the view.
+    
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    
+    
 }
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    [self.navigationController setNavigationBarHidden:NO animated:YES];
-    self.navigationItem.title = @"Info";
+    
 }
 
 - (void)setupViews {
-//    NSLog(@"%@", self.navigationController);
-//    self.navigationItem.title = @"Info";
+    self.tableView.delegate = self;
+    self.tableView.dataSource = self;
+    
+    [self.tableView registerClass:ImageTableViewCell.class forCellReuseIdentifier:@"ImageTableViewCellId"];
+    
+    
+    
 }
 
 /*
@@ -40,5 +53,18 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+#pragma mark - delegates
+
+- (NSInteger)tableView:(nonnull UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return 100;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ImageTableViewCellId" forIndexPath:indexPath];
+    cell.textLabel.text = [NSString stringWithFormat:@"%lu", indexPath.row];
+    return cell;
+}
+
 
 @end

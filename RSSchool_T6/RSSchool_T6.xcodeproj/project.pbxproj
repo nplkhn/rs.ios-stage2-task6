@@ -19,6 +19,8 @@
 		0365F493249D7BA1004307C8 /* GalleryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0365F492249D7BA1004307C8 /* GalleryViewController.m */; };
 		0365F496249D7BB0004307C8 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0365F495249D7BB0004307C8 /* HomeViewController.m */; };
 		0365F499249D889A004307C8 /* CustomNavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0365F498249D889A004307C8 /* CustomNavigationViewController.m */; };
+		03D5211F24A404DB004F21EA /* ImageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 03D5211E24A404DB004F21EA /* ImageCell.m */; };
+		03D5212324A51BE6004F21EA /* ImageTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 03D5212224A51BE6004F21EA /* ImageTableViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,6 +47,10 @@
 		0365F495249D7BB0004307C8 /* HomeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
 		0365F497249D889A004307C8 /* CustomNavigationViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CustomNavigationViewController.h; sourceTree = "<group>"; };
 		0365F498249D889A004307C8 /* CustomNavigationViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CustomNavigationViewController.m; sourceTree = "<group>"; };
+		03D5211D24A404DB004F21EA /* ImageCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ImageCell.h; sourceTree = "<group>"; };
+		03D5211E24A404DB004F21EA /* ImageCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ImageCell.m; sourceTree = "<group>"; };
+		03D5212124A51BE6004F21EA /* ImageTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ImageTableViewCell.h; sourceTree = "<group>"; };
+		03D5212224A51BE6004F21EA /* ImageTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ImageTableViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +83,7 @@
 		0365F461249BFED8004307C8 /* RSSchool_T6 */ = {
 			isa = PBXGroup;
 			children = (
+				03D5211C24A4043F004F21EA /* Views */,
 				0365F48D249D7B07004307C8 /* ViewControllers */,
 				0365F483249C20F3004307C8 /* Categories */,
 				0365F47C249C0108004307C8 /* Constraints */,
@@ -133,6 +140,17 @@
 				0365F498249D889A004307C8 /* CustomNavigationViewController.m */,
 			);
 			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		03D5211C24A4043F004F21EA /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				03D5211D24A404DB004F21EA /* ImageCell.h */,
+				03D5211E24A404DB004F21EA /* ImageCell.m */,
+				03D5212124A51BE6004F21EA /* ImageTableViewCell.h */,
+				03D5212224A51BE6004F21EA /* ImageTableViewCell.m */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -205,6 +223,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0365F499249D889A004307C8 /* CustomNavigationViewController.m in Sources */,
+				03D5212324A51BE6004F21EA /* ImageTableViewCell.m in Sources */,
 				0365F489249CB745004307C8 /* CustomTabBarController.m in Sources */,
 				0365F493249D7BA1004307C8 /* GalleryViewController.m in Sources */,
 				0365F486249C212B004307C8 /* UIColor+ColorWithRGBValue.m in Sources */,
@@ -212,6 +231,7 @@
 				0365F482249C08AD004307C8 /* StartScreenViewController.m in Sources */,
 				0365F496249D7BB0004307C8 /* HomeViewController.m in Sources */,
 				0365F475249BFEDD004307C8 /* main.m in Sources */,
+				03D5211F24A404DB004F21EA /* ImageCell.m in Sources */,
 				0365F490249D7B93004307C8 /* InfoViewController.m in Sources */,
 				0365F47F249C014D004307C8 /* iconNames.m in Sources */,
 			);

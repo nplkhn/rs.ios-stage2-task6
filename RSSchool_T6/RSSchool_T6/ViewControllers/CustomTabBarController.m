@@ -17,7 +17,6 @@
 
 @interface CustomTabBarController ()
 
-@property (nonatomic, strong) UINavigationItem *navItem;
 @property (nonatomic, strong) InfoViewController *infoViewController;
 @property (nonatomic, strong) GalleryViewController *galleryViewController;
 @property (nonatomic, strong) HomeViewController *homeViewController;
@@ -32,7 +31,6 @@
 }
 
 - (void)viewWillAppear:(BOOL)animated {
-    [self.navigationController setNavigationBarHidden:NO animated:YES];
     self.navigationItem.title = @"Info";
     self.navigationItem.backBarButtonItem = nil;
     self.navigationItem.hidesBackButton = YES;
@@ -42,34 +40,28 @@
 #pragma mark - setup views
 - (void)setupViews {
     self.view.backgroundColor = [UIColor colorFromRGBNumber:@0xFFFFFF];
-
-    [[CustomNavigationViewController alloc] initWithRootViewController:self];
     self.delegate = self;
-    
     
     //MARK: info VC
     InfoViewController *infoVC = [InfoViewController new];
-    infoVC.tabBarItem = [[UITabBarItem alloc] initWithTitle:nil image:[[UIImage imageNamed:kInfoUnselectedIconName] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] tag:0];
-    infoVC.tabBarItem.selectedImage = [[UIImage imageNamed:kInfoSelectedIconName] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
-    infoVC.tabBarItem.imageInsets = UIEdgeInsetsMake(-5, -5, -5, -5);
+    [self setViewController:infoVC
+         tabBarSelectedIcon:kInfoSelectedIconName
+    andTabBarUnselectedIcon:kInfoUnselectedIconName];
     self.infoViewController = infoVC;
     
     //MARK: gallery VC
     GalleryViewController *galleryVC = [GalleryViewController new];
-    galleryVC.tabBarItem = [[UITabBarItem alloc] initWithTitle:nil image:[[UIImage imageNamed:kGaleryUnselectedIconName] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] tag:0];
-    galleryVC.tabBarItem.selectedImage = [[UIImage imageNamed:kGallerySelectedIconName] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
-    galleryVC.tabBarItem.imageInsets = UIEdgeInsetsMake(-5, -5, -5, -5);
+    [self setViewController:galleryVC
+         tabBarSelectedIcon:kGallerySelectedIconName
+    andTabBarUnselectedIcon:kGaleryUnselectedIconName];
     self.galleryViewController = galleryVC;
     
     //MARK: home VC
     HomeViewController *homeVC = [HomeViewController new];
-    homeVC.tabBarItem = [[UITabBarItem alloc] initWithTitle:nil
-                                                      image:[[UIImage imageNamed:kHomeUnselectedIconName] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]
-                                                        tag:0];
-    homeVC.tabBarItem.selectedImage = [[UIImage imageNamed:kHomeSelectedIconName] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
-    homeVC.tabBarItem.imageInsets = UIEdgeInsetsMake(-5, -5, -5, -5);
+    [self setViewController:homeVC
+         tabBarSelectedIcon:kHomeSelectedIconName
+    andTabBarUnselectedIcon:kHomeUnselectedIconName];
     self.homeViewController = homeVC;
-    
     
     self.viewControllers = @[infoVC, galleryVC, homeVC];
 }
@@ -97,5 +89,13 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+#pragma mark - helpers
+
+- (void)setViewController:(UIViewController *)viewController tabBarSelectedIcon:(NSString *)selectedIconName andTabBarUnselectedIcon:(NSString *)unselectedIconName {
+    viewController.tabBarItem = [[UITabBarItem alloc] initWithTitle:nil image:[[UIImage imageNamed:unselectedIconName] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] tag:0];
+    viewController.tabBarItem.selectedImage = [[UIImage imageNamed:selectedIconName] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    viewController.tabBarItem.imageInsets = UIEdgeInsetsMake(-5, -5, -5, -5);
+}
 
 @end

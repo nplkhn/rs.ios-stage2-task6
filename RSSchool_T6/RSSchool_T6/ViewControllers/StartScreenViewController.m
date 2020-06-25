@@ -9,6 +9,9 @@
 #import "StartScreenViewController.h"
 #import "CustomNavigationViewController.h"
 #import "CustomTabBarController.h"
+#import "InfoViewController.h"
+#import "GalleryViewController.h"
+#import "HomeViewController.h"
 #import "UIColor+ColorWithRGBValue.h"
 
 
@@ -32,6 +35,7 @@
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     [self.navigationController setNavigationBarHidden:YES];
+    [self setupAnimations];
 }
 
 #pragma mark - setup views
@@ -41,7 +45,7 @@
     // MARK: top label
     self.topLabel = [UILabel new];
     self.topLabel.text = @"Are you ready?";
-    self.topLabel.font = [UIFont fontWithName:@"HelveticaNeue-Medium" size:24];
+    self.topLabel.font = [UIFont systemFontOfSize:24.0 weight:UIFontWeightMedium]; 
     [self.view addSubview:self.topLabel];
     
     self.topLabel.translatesAutoresizingMaskIntoConstraints = NO;
@@ -101,7 +105,7 @@
     self.startButton = [UIButton new];
     [self.startButton setTitle:@"START" forState:UIControlStateNormal];
     [self.startButton setTitleColor:[UIColor colorFromRGBNumber:@0x101010] forState:UIControlStateNormal];
-    self.startButton.titleLabel.font = [UIFont fontWithName:@"HelveticaNeue-Medium" size:20];
+    self.startButton.titleLabel.font = [UIFont systemFontOfSize:20.0 weight:UIFontWeightMedium];
     self.startButton.layer.cornerRadius = 27.5;
     self.startButton.backgroundColor = [UIColor colorFromRGBNumber: @0xF9CC78];
     
@@ -118,7 +122,10 @@
     
     [self.startButton addTarget:self action:@selector(buttonTapped) forControlEvents:UIControlEventTouchUpInside];
     
-    self.tabBarController = [CustomTabBarController new];
+    
+    
+//    self.tabBarController = [CustomTabBarController new];
+//    self.tabBarController.viewControllers = @[[InfoViewController new], [GalleryViewController new], [HomeViewController new]];
 }
 
 #pragma mark - setup animations
@@ -176,7 +183,12 @@
 
 #pragma mark - button tap handler
 - (void) buttonTapped {
-    [self.navigationController pushViewController:self.tabBarController animated:YES];
+    [self.navigationController setNavigationBarHidden:NO animated:YES];
+    if ((self.tabBarController = [CustomTabBarController new])){
+        
+        [self.navigationController pushViewController:self.tabBarController animated:YES];
+    }
+    
 }
 
 /*

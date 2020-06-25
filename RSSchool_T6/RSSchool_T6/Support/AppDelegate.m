@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "StartScreenViewController.h"
+#import "CustomTabBarController.h"
 #import "CustomNavigationViewController.h"
 
 @interface AppDelegate ()

@@ -7,8 +7,13 @@
 //
 
 #import "GalleryViewController.h"
+#import "ImageCell.h"
+#import "iconNames.h"
+@import Photos;
 
 @interface GalleryViewController ()
+
+@property (nonatomic, strong) PHFetchResult *fetchResult;
 
 @end
 
@@ -18,22 +23,49 @@
     [super viewDidLoad];
     [self setupViews];
     // Do any additional setup after loading the view.
+    
+    
+    self.fetchResult = [PHAsset fetchAssetsWithMediaType:PHAssetMediaTypeUnknown
+                                                 options:0];
+    NSLog(@"%@", self.fetchResult);
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    
 }
 
 
 - (void)setupViews {
-    self.navigationItem.title = @"Gallery";
-
+    self.view.backgroundColor = UIColor.whiteColor;
+    [self.collectionView registerClass:UICollectionViewCell.class forCellWithReuseIdentifier:@"collectionViewCellId"];
+    self.collectionView.dataSource = self;
+    self.collectionView.delegate = self;
+    
+    [self.view addSubview:self.collectionView];
 }
 
-/*
-#pragma mark - Navigation
+#pragma mark - collection view delegate
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
+    ImageCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"collectionViewCellId" forIndexPath:indexPath];
+    
+    PHAsset *asset = self.fetchResult[indexPath.item];
+    [cell setAsset:asset];
+    
+    return cell;
 }
-*/
+
+- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
+    return self.fetchResult.count;
+}
+
+- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
+    return floor(self.fetchResult.count/3.0);
+}
+
+- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
+    return CGSizeMake(80.0, 80.0);
+}
 
 @end
